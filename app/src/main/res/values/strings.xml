@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">tes061212</string>
+    <string name="name">Name</string>
+    <string name="comment">comment</string>
+    <string name="todo">TODO</string>
+    <string name="more">LEARN MORE</string>
+    <string name="share_me">SHARE ME</string>
+    <string name="back_me">BACK ME</string>
+</resources>
