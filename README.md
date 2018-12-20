@@ -1,1 +1,1 @@
-im use android Android Studio 3.2.1
+im use Android Studio 3.2.1
