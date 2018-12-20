@@ -5,7 +5,7 @@ import android.view.View;
 public class CustomeOnItemClickListener implements View.OnClickListener {
     private int position;
     private OnItemClickCallback onItemClickCallback;
-    public CustomeOnItemClickListener(int positions, OnItemClickCallback onItemClickCallback){
+    public CustomeOnItemClickListener(int position, OnItemClickCallback onItemClickCallback){
         this.position = position;
         this.onItemClickCallback = onItemClickCallback;
     }

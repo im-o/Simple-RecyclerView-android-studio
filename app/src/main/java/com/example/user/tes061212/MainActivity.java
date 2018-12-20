@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         showFloating();
         moveActivity();
     }
+    private void setActionBarTitle(){
+
+    }
 
     private void showRecyclerList() {
         rcView.setLayoutManager(new LinearLayoutManager(this));
