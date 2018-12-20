@@ -1,7 +1,7 @@
 package com.example.user.tes061212;
 
 public class Flowers {
-    private  String name, comment, photo;
+    private  String name, comment, photo, btnShare, btnMore;
     //get&setName
     public String getName(){
         return name;
@@ -22,5 +22,18 @@ public class Flowers {
     }
     public void setPhoto(String photo){
         this.photo = photo;
+    }
+    //button action
+    public String getBtnMore(){
+        return btnMore;
+    }
+    public void setBtnMore(String btnMore) {
+        this.btnMore = btnMore;
+    }
+    public String getBtnShare() {
+        return btnShare;
+    }
+    public void setBtnShare(String btnShare) {
+        this.btnShare = btnShare;
     }
 }

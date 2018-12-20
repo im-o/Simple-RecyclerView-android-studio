@@ -2,12 +2,11 @@ package com.example.user.tes061212;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
 
 public class ItemClickSupport {
     private final RecyclerView mRecyclerView;
-    private AdapterView.OnItemClickListener mOnItemClickListener;
-    private AdapterView.OnItemLongClickListener mOnItemLongClickListener;
+    private OnItemClickListener mOnItemClickListener;
+    private OnItemLongClickListener mOnItemLongClickListener;
 
     public ItemClickSupport(RecyclerView recyclerView) {
         mRecyclerView = recyclerView;
@@ -20,17 +19,17 @@ public class ItemClickSupport {
         public void onClick(View v) {
             if (mOnItemClickListener != null){
                 RecyclerView.ViewHolder holder = mRecyclerView.getChildViewHolder(v);
-                mOnItemClickListener.onItemClick(mRecyclerView, holder.getAdapterPosition(), v);
+                mOnItemClickListener.onItemClicked(mRecyclerView, holder.getAdapterPosition(), v);
             }
         }
-    }
+    };
 
     private View.OnLongClickListener mOnLongClickListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
             if(mOnLongClickListener != null){
                 RecyclerView.ViewHolder holder = mRecyclerView.getChildViewHolder(v);
-                return mOnItemLongClickListener.onItemLongClick(mRecyclerView, holder.getAdapterPosition(), v);
+                return mOnItemLongClickListener.onItemLongClicked(mRecyclerView, holder.getAdapterPosition(), v);
             }
             return false;
         }
@@ -70,18 +69,19 @@ public class ItemClickSupport {
         return support;
     }
 
-    public ItemClickSupport setOnItemClickListener(AdapterView.OnItemClickListener listener) {
+    public ItemClickSupport setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
         return this;
     }
     public ItemClickSupport setOnItemLongClickListener(OnItemLongClickListener listener) {
-        mOnItemLongClickListener = (AdapterView.OnItemLongClickListener) listener;
+        mOnItemLongClickListener = (OnItemLongClickListener) listener;
         return this;
     }
     private void detach(RecyclerView view) {
         view.removeOnChildAttachStateChangeListener(mAttachListener);
         view.setTag(R.id.item_click_support, null);
     }
+
     public interface OnItemClickListener {
         void onItemClicked(RecyclerView recyclerView, int position, View v);
     }
